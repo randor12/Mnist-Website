@@ -11,7 +11,7 @@ class CNN():
         # initialize the values
         self.model = models.Sequential()
         # add the hidden layers to the CNN
-        self.model.add(layers.Conv2D(32, 3, activation='relu', padding='same', input_shape=(28, 28, 1)))  # pad inputs to 32x32 shape and take a 3x3 output from the value
+        self.model.add(layers.Conv2D(32, 3, activation='relu', padding='same', input_shape=(28, 28, 1)))  # create the convolutions
         self.model.add(layers.MaxPooling2D((2, 2)))  # use max pooling
         self.model.add(layers.Conv2D(64, 3, padding='same', activation='relu'))  # more layers ...
         self.model.add(layers.MaxPooling2D((2, 2)))
