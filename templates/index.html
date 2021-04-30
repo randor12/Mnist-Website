@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+
+
+
+{% block content %}
+
+  <!-- HTML FOR HOMEPAGE GOES HERE -->
+  <h1>Digit Recognition</h1>
+  <p>Write a number between 0-9 with your mouse in the space below!</p>
+  {% if label is defined %}
+  <h2>Predicted Label: {{ label }}</h2>
+  {% endif %}
+
+<form id="draw-form" method="POST" enctype="multipart/form-data">
+  <div>
+    <label for='model_chosen'>Choose a model to test: </label>
+    <select id="model_chosen" name='model_chosen'>
+      <option value="CNN">CNN</option>
+      <option value="SVM (One vs One)">SVM (One vs One)</option>
+      <option value="Naive Bayes">Naive Bayes</option>
+    </select>
+  </div>
+    <div>
+      <canvas id="canvas", name ="draw" width="325" height="450" style="border: 1px solid black; background-color: #111111">
+      <script type="text/javascript">
+          $(document).ready(function() {
+              drawCanvas();
+          });
+      </script>
+      </canvas>
+      <input type="hidden" id = 'url' name="url" value="">
+      <br>
+      <input type="button" name="clear" id="clear" value="Clear" onclick="clear_canvas();" />
+      <input type="submit" id = 'predict' value="Predict" onclick="send_pic();" />
+    </div>
+  </form>
+
+
+{% endblock %}

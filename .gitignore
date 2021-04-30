@@ -1,0 +1,13 @@
+__pycache__/
+
+.vscode/
+.idea/
+.env/
+__MACOSX/
+
+digit-recognition.zip
+
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+
