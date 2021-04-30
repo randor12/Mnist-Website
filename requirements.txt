@@ -4,3 +4,4 @@ flask
 quadprog
 pickle
 tensorflow
+opencv-python
